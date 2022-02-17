@@ -1,38 +1,118 @@
-.App {
+:root {
+  --main-color: rgb(175, 175, 233);
+  --success-color: rgb(3, 189, 74);
+  --error-color: rgb(250, 74, 74);
+  --info-color: rgb(156, 155, 155);
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.table {
+  min-width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 14px;
+}
+.table th,
+.table td {
   text-align: center;
+  padding: 15px 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.table thead tr {
+  background-color: var(--main-color);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.table tbody tr {
+  border-bottom: 1px solid black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--main-color);
+}
+.delete-btn:hover {
+  opacity: 0.8;
+}
+select {
+  padding: 4px 0;
+}
+input {
+  outline: none;
+}
+.modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
-
-.App-link {
-  color: #61dafb;
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(45, 45, 45, 0.234);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-form {
+  width: 400px;
+  padding: 20px;
+  background: white;
+  z-index: 1;
+}
+.modal-form-group,
+.form-sign-in-group,
+.form-sign-up-group {
+  width: 100%;
+  margin: 16px 0;
+}
+.modal-form-group label,
+.form-sign-in-group label,
+.form-sign-up-group label {
+  display: block;
+}
+.modal-form-group input,
+.form-sign-in-group input,
+.form-sign-up-group input {
+  width: 100%;
+}
+.modal-form-group button {
+  border: none;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
+.confirm-message {
+  background-color: white;
+  z-index: 1;
+  max-width: 500px;
+}
+.confirm-message__title {
+  font-size: 20px;
+  padding: 10px;
+  background-color: var(--main-color);
+}
+.confirm-message__question {
+  padding: 10px;
+}
+.confirm-message__answers {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.confirm-message__answer {
+  border: none;
+  margin: 0 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.confirm-message__answer.no{
+  background-color: var(--main-color);
 }
